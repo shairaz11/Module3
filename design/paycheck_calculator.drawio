@@ -40,7 +40,7 @@ YES branch:
 │ OvertimeHours = Hours - 40 │
 │ OvertimePay =              │
 │ OvertimeHours ×            │
-│ (Rate × 1.5)              │
+│ (Rate × 1.5)               │
 │ TotalPay = RegularPay +    │
 │ OvertimePay                │
 └───────────┬────────────────┘
