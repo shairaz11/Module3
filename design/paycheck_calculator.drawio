@@ -1,21 +1,52 @@
-START
+ ┌─────────┐
+ │  Start  │
+ └────┬────┘
+      │
+      ▼
+┌───────────────────┐
+│ Input HoursWorked │
+│ Input HourlyRate  │
+└─────────┬─────────┘
+          │
+          ▼
+     ┌───────────┐
+     │ Hours >40?│
+     └─────┬─────┘
+      Yes  │  No
+           │
+           ▼
+      ┌───────────────┐
+      │ TotalPay =    │
+      │ HoursWorked × │
+      │ HourlyRate    │
+      └──────┬────────┘
+             │
+             ▼
+        ┌─────────┐
+        │ Output  │
+        │ TotalPay│
+        └────┬────┘
+             │
+             ▼
+          ┌─────┐
+          │ End │
+          └─────┘
 
-    INPUT hoursWorked
-    INPUT hourlyRate
 
-    IF hoursWorked > 40 THEN
+YES branch:
 
-        LET regularPay = 40 * hourlyRate
-        LET overtimeHours = hoursWorked - 40
-        LET overtimePay = overtimeHours * (hourlyRate * 1.5)
-        LET totalPay = regularPay + overtimePay
-
-    ELSE
-
-        LET totalPay = hoursWorked * hourlyRate
-
-    END IF
-
-    OUTPUT totalPay
-
-END
+┌────────────────────────────┐
+│ RegularPay = 40 × Rate     │
+│ OvertimeHours = Hours - 40 │
+│ OvertimePay =              │
+│ OvertimeHours ×            │
+│ (Rate × 1.5)              │
+│ TotalPay = RegularPay +    │
+│ OvertimePay                │
+└───────────┬────────────────┘
+            │
+            ▼
+       Output TotalPay
+            │
+            ▼
+           End
