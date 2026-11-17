@@ -1,12 +1,18 @@
-# Get the number of hours worked
-hours_worked = float(input("Enter hours worked this week: "))
+START
 
-# Calculate paycheck
-if hours_worked > 40:
-    overtime_hours = hours_worked - 40
-    paycheck = (40 * 20) + (overtime_hours * 30)
-else:
-    paycheck = hours_worked * 20
+    INPUT hoursWorked
 
-# Display result
-print("Weekly paycheck: $", paycheck)
+    IF hoursWorked > 40 THEN
+
+        LET overtimeHours = hoursWorked - 40
+        LET paycheck = (40 * 20) + (overtimeHours * 30)
+
+    ELSE
+
+        LET paycheck = hoursWorked * 20
+
+    END IF
+
+    OUTPUT "Weekly Paycheck: $" + paycheck
+
+END
