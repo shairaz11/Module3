@@ -1,21 +1,18 @@
 START
 
-    INPUT hoursWorked
-    INPUT hourlyRate
+INPUT hoursWorked
 
-    IF hoursWorked > 40 THEN
+IF hoursWorked > 40 THEN
 
-        LET regularPay = 40 * hourlyRate
-        LET overtimeHours = hoursWorked - 40
-        LET overtimePay = overtimeHours * (hourlyRate * 1.5)
-        LET totalPay = regularPay + overtimePay
+    LET overtimeHours = hoursWorked - 40
+    LET paycheck = (40 * 20) + (overtimeHours * 30)
 
-    ELSE
+ELSE
 
-        LET totalPay = hoursWorked * hourlyRate
+    LET paycheck = hoursWorked * 20
 
-    END IF
+END IF
 
-    OUTPUT totalPay
+OUTPUT paycheck
 
- END
+END
