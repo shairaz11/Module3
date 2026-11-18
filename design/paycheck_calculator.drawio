@@ -1,31 +1,32 @@
-                 (START)
-                     |
-                     v
-        /-------------------------\
-       /  Input Hours Worked      \
-       \-------------------------/
-                     |
-                     v
-              < Hours > 40? >
-                 /         \
-              Yes           No
-               |             |
-               v             v
-      [Overtime Hours =   [Paycheck =
-       Hours Worked - 40]  Hours Worked × 20]
-               |
-               v
-      [Paycheck =
-       (40 × 20) +
-       (Overtime Hours × 30)]
-               |
-               |
-               +-------------+
-                             |
-                             v
-            /--------------------------\
-           /     Output Paycheck       \
-           \--------------------------/
-                             |
-                             v
-                           (END)
+(Start)
+    |
+    v
+[Input hoursWorked]
+    |
+    v
+<Is hoursWorked <= 40?>
+   / \
+ Yes  No
+ /      \
+v        v
+[paycheck =     [regularPay = 40 * 20]
+ hoursWorked*20]      |
+      |               v
+      |        [overtimeHours =
+      |         hoursWorked - 40]
+      |               |
+      |               v
+      |        [overtimePay =
+      |         overtimeHours * 30]
+      |               |
+      |               v
+      |        [paycheck =
+      |         regularPay +
+      |         overtimePay]
+      \_____________/
+             |
+             v
+     [Output paycheck]
+             |
+             v
+           (End)
