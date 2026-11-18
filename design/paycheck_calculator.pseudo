@@ -1,16 +1,23 @@
 BEGIN
 
-READ hoursWorked
+    READ hoursWorked
 
-IF hoursWorked <= 40 THEN
-    CALCULATE paycheck = hoursWorked * 20
-ELSE
-    CALCULATE regularPay = 40 * 20
-    CALCULATE overtimeHours = hoursWorked - 40
-    CALCULATE overtimePay = overtimeHours * 30
-    CALCULATE paycheck = regularPay + overtimePay
-END IF
+    IF hoursWorked <= 40 THEN
 
-DISPLAY paycheck
+        CALCULATE paycheck = hoursWorked * 20
+
+    ELSE
+
+        CALCULATE regularPay = 40 * 20
+
+        CALCULATE overtimeHours = hoursWorked - 40
+
+        CALCULATE overtimePay = overtimeHours * 30
+
+        CALCULATE paycheck = regularPay + overtimePay
+
+    END IF
+
+    DISPLAY paycheck
 
 END
