@@ -1,32 +1,54 @@
-(Start)
-    |
-    v
-[Input hoursWorked]
-    |
-    v
-<Is hoursWorked <= 40?>
-   / \
- Yes  No
- /      \
-v        v
-[paycheck =     [regularPay = 40 * 20]
- hoursWorked*20]      |
-      |               v
-      |        [overtimeHours =
-      |         hoursWorked - 40]
-      |               |
-      |               v
-      |        [overtimePay =
-      |         overtimeHours * 30]
-      |               |
-      |               v
-      |        [paycheck =
-      |         regularPay +
-      |         overtimePay]
-      \_____________/
-             |
-             v
-     [Output paycheck]
-             |
-             v
-           (End)
+           (Start)
+               |
+               v
+    /-------------------\
+   / Read hoursWorked    \
+   \                     /
+    \-------------------/
+               |
+               v
+         /-------------\
+        / hoursWorked  \
+       <    <= 40 ?     >
+        \             /
+         \-----------/
+          /         \
+       Yes           No
+        |             |
+        v             v
+
++----------------+   +----------------------+
+| paycheck =     |   | regularPay = 40 * 20 |
+| hoursWorked*20 |   +----------------------+
++----------------+              |
+                                v
+                     +-------------------------+
+                     | overtimeHours =         |
+                     | hoursWorked - 40        |
+                     +-------------------------+
+                                |
+                                v
+                     +-------------------------+
+                     | overtimePay =           |
+                     | overtimeHours * 30      |
+                     +-------------------------+
+                                |
+                                v
+                     +-------------------------+
+                     | paycheck =              |
+                     | regularPay +            |
+                     | overtimePay             |
+                     +-------------------------+
+                                |
+                                |
+                ----------------
+                |
+                v
+
+    /-------------------\
+   / Display paycheck    \
+   \                     /
+    \-------------------/
+               |
+               v
+            (End)
